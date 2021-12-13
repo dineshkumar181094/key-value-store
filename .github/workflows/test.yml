@@ -1,0 +1,19 @@
+name: Test Go Code
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          stable: 'false'
+          go-version: '1.15.5'
+
+      - name: Test
+        run: go test ./...
