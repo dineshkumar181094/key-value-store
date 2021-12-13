@@ -12,9 +12,9 @@ var globalStore = make(map[string]string)
 
 func Start(port int) {
 	r := gin.Default()
-	r.GET("/get", getKeyHandler)
-	r.POST("/set", setKeyHandler)
-	r.PUT("/update", updateKeyHandler)
+	r.GET("/v1/get", getKeyHandler)
+	r.POST("/v1/set", setKeyHandler)
+	r.PUT("/v1/update", updateKeyHandler)
 
 	r.Run(fmt.Sprintf("0.0.0.0:%v", port)) // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
