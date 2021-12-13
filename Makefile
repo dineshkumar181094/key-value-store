@@ -15,7 +15,7 @@ lint:
 
 build:
 	go build -o bin/api ./exec/api
-	go build -o bin/cli ./exec/cli
+	go build -o bin/kvstore ./exec/cli
 
 runserver:
 	go run ./exec/api/main.go

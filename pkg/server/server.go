@@ -16,7 +16,10 @@ func Start(port int) {
 	r.POST("/v1/set", setKeyHandler)
 	r.PUT("/v1/update", updateKeyHandler)
 
-	r.Run(fmt.Sprintf("0.0.0.0:%v", port)) // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	err := r.Run(fmt.Sprintf("0.0.0.0:%v", port)) // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	if err != nil {
+		log.Fatalf("error occured %s", err.Error())
+	}
 }
 
 func getKeyHandler(c *gin.Context) {
