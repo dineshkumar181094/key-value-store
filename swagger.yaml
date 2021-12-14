@@ -5,7 +5,7 @@ info:
   description: api swagger
   version: 1.0.0
 servers:
-- url: http://65.0.18.148:3000
+- url: http://65.0.18.140:8080
 paths:
   /v1/set:
     post:
@@ -39,9 +39,9 @@ paths:
                 type: string
               examples: 'KeyAlreadyExists: key already exists please use update method'
       servers:
-      - url: http://65.0.18.148:3000
+      - url: http://65.0.18.140:8080
     servers:
-    - url: http://65.0.18.148:3000
+    - url: http://65.0.18.140:8080
   /v1/get:
     get:
       description: 'Fetching key from server'
@@ -68,9 +68,9 @@ paths:
                 type: string
               examples: 'KeyNotFound: Key Not Found'
       servers:
-      - url: http://65.0.18.148:3000
+      - url: http://65.0.18.140:8080
     servers:
-    - url: http://65.0.18.148:3000
+    - url: http://65.0.18.140:8080
   /v1/update:
     put:
       description: 'Updating existing key on server'
@@ -103,7 +103,7 @@ paths:
                 type: string
               examples: 'KeyNotFound: Key Not Found'
       servers:
-      - url: http://65.0.18.148:3000
+      - url: http://65.0.18.140:8080
     servers:
-    - url: http://65.0.18.148:3000
+    - url: http://65.0.18.140:8080
 components: {}

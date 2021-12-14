@@ -42,6 +42,8 @@ cd bin
 
 ## CI/CD Intergration
 
-- lint check on master merge.
-- Test flow trigger on master merge.
-- New relase is created on any Tag push.
+- lint check on master merge [lint.yml](.github/workflows/lint.yml).
+- Test flow trigger on master merge[test.yml](.github/workflows/test.yml).
+- New relase is created on any Tag push[release.yaml](.github/workflows/release.yml).
+
+examples - [Actions link](https://github.com/dineshkumar181094/key-value-store/actions) 
