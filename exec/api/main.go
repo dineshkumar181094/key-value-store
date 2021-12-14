@@ -15,6 +15,7 @@ var (
 )
 
 func main() {
+	flag.Parse()
 	lvl, err := log.ParseLevel(*loglevel)
 	if err != nil {
 		fmt.Println("log version is not in [debug,info,warn,error,fatal] setting default to info")

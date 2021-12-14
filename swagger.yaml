@@ -1,0 +1,109 @@
+---
+openapi: 3.0.1
+info:
+  title: Key-value-store
+  description: api swagger
+  version: 1.0.0
+servers:
+- url: http://65.0.18.148:3000
+paths:
+  /v1/set:
+    post:
+      description: 'Set key on server'
+      parameters:
+      - name: value
+        in: query
+        required: true
+        schema:
+          type: string
+        example: GGN
+      - name: key
+        in: query
+        required: true
+        schema:
+          type: string
+        example: home
+      responses:
+        "200":
+          description: 'success status for key'
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+              examples: 'Ok'
+        "400":
+          description: 'setting existing key'
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+              examples: 'KeyAlreadyExists: key already exists please use update method'
+      servers:
+      - url: http://65.0.18.148:3000
+    servers:
+    - url: http://65.0.18.148:3000
+  /v1/get:
+    get:
+      description: 'Fetching key from server'
+      parameters:
+      - name: key
+        in: query
+        required: false
+        schema:
+          type: string
+        example: home
+      responses:
+        "200":
+          description: 'Fetching existing key'
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+              examples: 'Ok'
+        "400":
+          description: 'Fetching non-existing key'
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+              examples: 'KeyNotFound: Key Not Found'
+      servers:
+      - url: http://65.0.18.148:3000
+    servers:
+    - url: http://65.0.18.148:3000
+  /v1/update:
+    put:
+      description: 'Updating existing key on server'
+      parameters:
+      - name: value
+        in: query
+        required: true
+        schema:
+          type: string
+        example: GGNNEW
+      - name: key
+        in: query
+        required: true
+        schema:
+          type: string
+        example: nonex
+      responses:
+        "200":
+          description: 'success code for updating key'
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+              examples: 'Ok'
+        "400":
+          description: 'Updating non existing key'
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+              examples: 'KeyNotFound: Key Not Found'
+      servers:
+      - url: http://65.0.18.148:3000
+    servers:
+    - url: http://65.0.18.148:3000
+components: {}

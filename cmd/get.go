@@ -31,6 +31,7 @@ var getCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
 			fmt.Println("please pass atleast one key for lookup")
+			return
 		}
 		// fmt.Println("get called")
 
